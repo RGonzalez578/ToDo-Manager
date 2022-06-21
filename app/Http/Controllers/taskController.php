@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Validator;
+use App\Models\Task;
 
 class TaskController extends Controller
 {
@@ -13,7 +15,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        $tasks = Task::all();
+        return view('index', compact('tasks'));
     }
 
     /**
@@ -34,7 +37,29 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make([
+            'title' => $request['title'],
+            'category' => $request['category'],
+            'date' => $request['date'],
+            'description' => $request['description']
+        ],[
+            'title' => 'required',
+            'category' => 'required',
+            'date' => 'required',
+            'description' => 'required'
+        ]);
+
+        if(!$validator->fails()){
+            $task = Task::create([
+                'title' => $request->title,
+                'category' => $request->category,
+                'duedate' => $request->date,
+                'description' => $request->description
+            ]);
+            return redirect('/');
+        }else{
+            return redirect('/add');
+        }
     }
 
     /**

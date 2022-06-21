@@ -127,3 +127,61 @@ nav .nav-btn a:hover{
     background-color: #282828;
     color: #d0d0d0;
 }
+
+/*** Add page ***/
+.add-container{
+    margin: 0 auto;
+    width: 70%;
+}
+input[type=text]{
+    width: 100%;
+    margin-bottom: 1em;
+    padding: .5em 1em;
+    border: .15em solid #282828;
+    border-radius: 2em;
+    background-color: transparent;
+    color: #282828;
+}
+input[type=text]:focus{
+    outline: none;
+    border: .15em solid #aeaeae;
+}
+input[type=date]{
+    width: 100%;
+    margin-bottom: 1em;
+    padding: .5em 1em;
+    border: .15em solid #282828;
+    border-radius: 2em;
+    background-color: transparent;
+    color: #282828;
+}
+input[type=date]:focus{
+    outline: none;
+    border: .15em solid #aeaeae;
+}
+textarea{
+    width: 100%;
+    margin-bottom: 1em;
+    padding: .5em 1em;
+    border: .15em solid #282828;
+    border-radius: 1em;
+    background-color: transparent;
+    color: #282828;
+}
+textarea:focus{
+    outline: none;
+    border: .15em solid #aeaeae;
+}
+.add-container button{
+    margin: .5em auto;
+    padding: .5em 2em;
+    border: .15em solid #282828;
+    border-radius: 2em;
+    background-color: transparent;
+    color: #282828;
+    font-size: 1.2em;
+}
+.add-container button:hover{
+    background-color: #282828;
+    color: #d0d0d0;
+}
