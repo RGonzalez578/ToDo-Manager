@@ -21,9 +21,8 @@
             </nav>
 
             <div class="list-container">
-
                 @if (empty($tasks))
-                    <h3>No tasks</h3>
+                    <h3>All clear</h3>
                 @else
                     @foreach ($tasks as $task)
                         <div class="task">
@@ -34,8 +33,8 @@
                                 <h2>{{$task->title}}</h2>
                             </div>
                             <div class="task-controller">
-                                <a href="#">Detail</a>
-                                <a href="#">Delete</a>
+                                <a href="/detail/{{ $task->id }}">Detail</a>
+                                <a href="/delete/{{ $task->id }}">Delete</a>
                             </div>
                         </div>
                     @endforeach

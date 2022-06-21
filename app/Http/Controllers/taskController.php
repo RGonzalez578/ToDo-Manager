@@ -70,7 +70,8 @@ class TaskController extends Controller
      */
     public function show($id)
     {
-        //
+        $task = Task::find($id);
+        return view('task_detail', compact('task'));
     }
 
     /**
@@ -104,6 +105,7 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Task::find($id)->delete();
+        return redirect('/');
     }
 }

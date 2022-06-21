@@ -24,5 +24,8 @@ Route::get('/add', function () {
     return view('add_task');
 });
 
+Route::get('/detail/{id}', [TaskController::class, 'show'])->name('show');
+
+Route::get('/delete/{id}', [TaskController::class, 'destroy'])->name('delete');
 
 Route::post('/add', [TaskController::class, 'store'])->name('addStoreTask');
